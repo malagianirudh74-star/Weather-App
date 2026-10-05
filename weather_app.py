@@ -14,6 +14,9 @@ while True:
         because the OPEN-METEO API only takes latitude and longitude
         ''' 
         response = requests.get(f"https://geocoding-api.open-meteo.com/v1/search?name={city}")
+
+        #Checking if the HTTP status is successful or not, go to exception if unsuccessful
+        response.raise_for_status()
     
         '''
         Now that we have sent a request, here's an another request to send the text information as an actual
