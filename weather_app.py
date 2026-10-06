@@ -44,9 +44,10 @@ while True:
 
     #Request to recive the information in the form of dictionary
     data1 = response1.json()
+    print(data1)
 
     #Displaying the temperature
-    print(f"\nCurrent Temperature in {city}: ",data1['current']['temperature_2m'])
+    # print(f"\nCurrent Temperature in {city}: ",data1['current']['temperature_2m'])
 
     ch=int(input("\nWant to continue? \n1.YES \n2.NO \nEnter 1 or 2: "))
     if ch == 1:
