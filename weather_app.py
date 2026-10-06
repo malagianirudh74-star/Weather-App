@@ -46,11 +46,42 @@ while True:
     data1 = response1.json()
     weather_code = data1['current']['weather_code']
 
-    
+    if weather_code == 0:
+        weather = "Clear sky"
 
-    #Displaying the temperature
-    print(f"\nCurrent Temperature in {city}: ",data1['current']['temperature_2m'])
-    print("Weather code: ",weather_code)
+    elif weather_code == 1:
+        weather = "Mainly clear"
+
+    elif weather_code == 2:
+        weather = "Partly cloudy"
+
+    elif weather_code == 3:
+        weather = "Overcast"
+
+    elif weather_code == 45 or weather_code == 48:
+        weather = "Fog"
+
+    elif weather_code >= 51 and weather_code <= 57:
+        weather = "Drizzle"
+
+    elif weather_code >= 61 and weather_code <= 67:
+        weather = "Rain"
+
+    elif weather_code >= 71 and weather_code <= 77:
+        weather = "Snow"
+
+    elif weather_code >= 80 and weather_code <= 82:
+        weather = "Rain showers"
+
+    elif weather_code == 95:
+        weather = "Thunderstorm"
+
+    else:
+        weather = "Unknown weather condition"
+
+    #Displaying the temperature and weather status
+    print(f"\nCurrent Temperature in {city}: ", data1['current']['temperature_2m'], "°C")
+    print("Weather:", weather)
 
     ch=int(input("\nWant to continue? \n1.YES \n2.NO \nEnter 1 or 2: "))
     if ch == 1:
