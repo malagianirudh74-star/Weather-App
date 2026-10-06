@@ -35,21 +35,4 @@ while True:
         print("City not found. Please try again.")
         continue
 
-    #Accesssing only the latitude and longitude from the given data
-    lat = data['results'][0]['latitude']
-    long = data['results'][0]['longitude']
-
-    #Now, sending a request to the Open-meteo API to give the information
-    response1 = requests.get(f"https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={long}&current=temperature_2m")
-
-    #Request to recive the information in the form of dictionary
-    data1 = response1.json()
-
-    #Displaying the temperature
-    print(f"\nCurrent Temperature in {city}: ",data1['current']['temperature_2m'])
-
-    ch=int(input("\nWant to continue? \n1.YES \n2.NO \nEnter 1 or 2: "))
-    if ch == 1:
-        continue
-    else:
-        break   
+    
