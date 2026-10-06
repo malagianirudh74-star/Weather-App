@@ -40,7 +40,7 @@ while True:
     long = data['results'][0]['longitude']
 
     #Now, sending a request to the Open-meteo API to give the information
-    response1 = requests.get(f"https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={long}&current=temperature_2m")
+    response1 = requests.get(f"https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={long}&current=temperature_2m,weather_code")
 
     #Request to recive the information in the form of dictionary
     data1 = response1.json()
