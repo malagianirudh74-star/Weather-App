@@ -46,6 +46,7 @@ while True:
     data1 = response1.json()
     weather_code = data1['current']['weather_code']
     wind_speed = data1['current']['wind_speed_10m']
+    humidity = data1['current']['relative_humidity_2m']
 
     if weather_code == 0:
         weather = "Clear sky"
