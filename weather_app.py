@@ -85,6 +85,7 @@ while True:
     print(f"\nCurrent Temperature in {city}: ", data1['current']['temperature_2m'], "°C")
     print("Weather:", weather)
     print("Wind Speed:", wind_speed, "km/h")
+    print("Humidity:", humidity, "%")
 
     ch=int(input("\nWant to continue? \n1.YES \n2.NO \nEnter 1 or 2: "))
     if ch == 1:
