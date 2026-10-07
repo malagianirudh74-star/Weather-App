@@ -45,6 +45,7 @@ while True:
     #Request to recive the information in the form of dictionary
     data1 = response1.json()
     weather_code = data1['current']['weather_code']
+    wind_speed = data1['current']['wind_speed_10m']
 
     if weather_code == 0:
         weather = "Clear sky"
@@ -82,6 +83,7 @@ while True:
     #Displaying the temperature and weather status
     print(f"\nCurrent Temperature in {city}: ", data1['current']['temperature_2m'], "°C")
     print("Weather:", weather)
+    print("Wind Speed:", wind_speed, "km/h")
 
     ch=int(input("\nWant to continue? \n1.YES \n2.NO \nEnter 1 or 2: "))
     if ch == 1:
