@@ -39,6 +39,9 @@ while True:
     lat = data['results'][0]['latitude']
     long = data['results'][0]['longitude']
 
+    #Accessing the country
+    country = results[0]['country']
+
     #Now, sending a request to the Open-meteo API to give the information
     response1 = requests.get(f"https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={long}&current=temperature_2m,weather_code,wind_speed_10m,relative_humidity_2m")
 
@@ -81,11 +84,12 @@ while True:
     else:
         weather = "Unknown weather condition"
 
-    #Displaying the temperature and weather status
-    print(f"\nCurrent Temperature in {city}: ", data1['current']['temperature_2m'], "°C")
+    #Displaying the location, temperature weather status, Wind speed and Humidity
+    print(f"\nLocation: {city}, {country}")
+    print("Current Temperature:", data1['current']['temperature_2m'], "°C")
     print("Weather:", weather)
     print("Wind Speed:", wind_speed, "km/h")
-    print("Humidity:", humidity, "%")
+    print("Humidity:", humidity, "%")    
 
     ch=int(input("\nWant to continue? \n1.YES \n2.NO \nEnter 1 or 2: "))
     if ch == 1:
@@ -93,4 +97,4 @@ while True:
     else:
         break   
 
-    
+
