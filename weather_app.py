@@ -84,7 +84,8 @@ while True:
     else:
         weather = "Unknown weather condition"
 
-    
+    #Displaying the location, temperature weather status, Wind speed and Humidity
+    print(f"\nLocation: {city}, {country}")
     print("Current Temperature:", data1['current']['temperature_2m'], "°C")
     print("Weather:", weather)
     print("Wind Speed:", wind_speed, "km/h")
