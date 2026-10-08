@@ -6,7 +6,7 @@ print("Weather Information System")
 while True:
 
     #input the city whose current weather the user wants to know 
-    city = input("Enter the city: ")
+    city = input("\nEnter the city: ")
 
     try:
         '''
@@ -95,6 +95,7 @@ while True:
     if ch == 1:
         continue
     else:
+        print("Exiting...THANK YOU!");
         break   
 
 
